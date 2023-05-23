@@ -1,5 +1,12 @@
+
 export default function Login() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24"></main>
-  );
+    <main >
+      <header>
+        <h1>
+          FREE-DELIVERY
+        </h1>
+      </header>
+    </main>
+  )
 }

@@ -1,4 +1,3 @@
-
 type TypeLayout = {
     children: React.ReactNode
 }
