@@ -1,5 +1,6 @@
+
 type TypeLayout = {
-    children: React.ReactNode
+    children?: React.ReactNode
 }
 
 export type { TypeLayout }

@@ -1,32 +1,52 @@
-import { SvgEmail, SvgPasswordAsterisk } from "@/components/svg/svg"
+"use client"
+import { useState } from "react";
+import { SvgEmail, SvgPasswordAsterisk, SvgPasswordPadlockHidden, SvgPasswordPadlockShow } from "@/components/svg/svg";
+import Header from "@/components/Header/Header";
 
+export default function Login() {
+  const [isHiddenPassword, setIsHiddenPassword] = useState(true);
 
-export default function Home() {
+  const handlePasswordVisibility = () => {
+    setIsHiddenPassword(!isHiddenPassword);
+  };
+
   return (
-    <main className="h-full" >
-      <header className="fixed top-0 w-full p-3 bg-emerald-500 border-emerald-950 border-b-4">
-        <h1 className="font-bold text-3xl">FREE-DELIVERY</h1>
-      </header>
+    <main className="h-full">
+      <Header />
       <section className="h-full flex justify-center items-center">
-        <form className="bg-slate-100 p-3 shadow shadow-2xl space-y-4 h-auto">
-          <div className="border  h-full w-full relative" >
-            <span className="absolute left-2 -top-2">
-              EMAIL <SvgEmail />
-            </span>
-            <input type="email" className="h-full w-full p-2 bg-transparent" />
+        <form className="bg-slate-100 p-3 shadow shadow-2xl space-y-5 h-auto">
+          <fieldset className="p-4">
+            <legend className="font-bold flex items-center">
+              EMAIL <span className="ml-2"><SvgEmail /></span>
+            </legend>
+            <input type="email" className="border h-full w-full p-2 bg-transparent" />
+          </fieldset>
 
-          </div>
+          <fieldset className="p-4 relative">
+            <legend className="font-bold flex items-center">
+              PASSWORD <span className="ml-2"><SvgPasswordAsterisk /></span>
+            </legend>
 
-          <div className="border  h-full w-full relative" >
-            <span className="absolute left-2 -top-2">
-              PASSWORD <SvgPasswordAsterisk />
-            </span>
-            <input type="password" className="h-full w-full p-2 bg-transparent" />
-          </div>
+            {isHiddenPassword ? (
+              <>
+                <input type="password" className="border h-full w-full p-2 bg-transparent" />
+                <span className="absolute bottom-5 right-5 cursor-pointer" onClick={handlePasswordVisibility}>
+                  <SvgPasswordPadlockHidden />
+                </span>
+              </>
+            ) : (
+              <>
+                <input type="text" className="border h-full w-full p-2 bg-transparent" />
+                <span className="absolute bottom-5 right-5 cursor-pointer" onClick={handlePasswordVisibility}>
+                  <SvgPasswordPadlockShow />
+                </span>
+              </>
+            )}
+          </fieldset>
 
-          <button>LOGIN</button>
+          <button className="p-2 font-bold text-2xl w-full h-full flex justify-center bg-emerald-500">LOGIN</button>
         </form>
       </section>
-    </main >
-  )
+    </main>
+  );
 }
