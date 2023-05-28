@@ -1,6 +1,15 @@
 
 type TypeLayout = {
     children?: React.ReactNode
-}
+};
 
-export type { TypeLayout }
+type TypeLoginValidation = {
+    email: string;
+    password: string;
+};
+
+type TypeStrokColor = {
+    color?: string
+};
+
+export type { TypeLayout, TypeLoginValidation, TypeStrokColor };

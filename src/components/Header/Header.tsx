@@ -1,4 +1,4 @@
-import { TypeLayout } from '../../app/global/interfaces/globals'
+import { TypeLayout } from "../../app/global/interfaces/globals";
 
 
 function Header({ children }: TypeLayout) {
@@ -7,7 +7,7 @@ function Header({ children }: TypeLayout) {
             <h1 className="font-bold text-3xl">FREE-DELIVERY</h1>
             {children}
         </header>
-    )
-}
+    );
+};
 
-export default Header
+export default Header;
