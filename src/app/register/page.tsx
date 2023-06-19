@@ -30,7 +30,6 @@ export default function Register() {
     };
 
     const onSubmitRegister = (data: TypeRegisterValidation) => {
-        console.log(data)
         reset()
     }
 
