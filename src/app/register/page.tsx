@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 import { SvgPasswordPadlockHidden, SvgPasswordPadlockShow } from "@/components/svg/svg";
-import registerValidation from "@/validations/register";
+import registerValidation from "@/library/yup/validations/register";
 
 import Header from "@/components/Header/Header";
 import { TypeRegisterValidation } from "../global/interfaces/globals";

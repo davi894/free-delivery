@@ -1,11 +1,12 @@
 'use client'
-import { ClassAttributes, ReactNode,  } from 'react';
 
-type ButtonProps  = ClassAttributes<HTMLButtonElement> & {
-  children: ReactNode
-}
+import { ButtonHTMLAttributes, ReactNode } from 'react';
 
-export default function Button({ children, ...props }:ButtonProps){
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+  className?: string;
+  children: ReactNode;
+};
 
-    return <button {...props} >{children} </button>
+export default function Button({ className, children, ...props }: ButtonProps) {
+  return <button className={className} {...props}>{children}</button>;
 }

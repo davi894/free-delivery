@@ -5,7 +5,7 @@ import { useState } from "react";
 import { SvgEmail, SvgPasswordAsterisk, SvgPasswordPadlockHidden, SvgPasswordPadlockShow } from "@/components/svg/svg";
 import Header from "@/components/Header/Header";
 
-import loginValidation from "../validations/login";
+import loginValidation from "../library/yup/validations/login";
 import { TypeLoginValidation } from "./global/interfaces/globals";
 
 import { yupResolver } from '@hookform/resolvers/yup';
