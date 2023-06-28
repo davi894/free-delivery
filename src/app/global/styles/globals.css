@@ -20,6 +20,9 @@ html {
   content: none;
   font-family: 'Inter', sans-serif;
   background-color: #e0f2fe;
+
+ /*DEBBUGUER STYLED  */
+  outline: 1px solid red
 };
 
 p,
