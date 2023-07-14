@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 import { SvgPasswordPadlockHidden, SvgPasswordPadlockShow } from "@/components/svg/svg";
 import registerValidation from "@/library/yup/validations/register";
@@ -40,7 +41,7 @@ export default function Register() {
 
             <section className="h-full flex justify-center items-center">
 
-                <form onSubmit={handleSubmit(onSubmitRegister)} className="bg-slate-100 mt-28 p-3 shadow shadow-2xl space-y-5 h-auto">
+                <form onSubmit={handleSubmit(onSubmitRegister)} className="bg-slate-100 mt-28 p-3 shadow-2xl space-y-5 h-auto">
 
                     <fieldset className="p-2">
 
@@ -171,6 +172,8 @@ export default function Register() {
                         REGISTER
 
                     </button>
+
+                    <Link href="/" prefetch={false} >Login</Link>
 
                 </form>
 

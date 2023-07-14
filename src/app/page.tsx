@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 import { SvgEmail, SvgPasswordAsterisk, SvgPasswordPadlockHidden, SvgPasswordPadlockShow } from "@/components/svg/svg";
@@ -40,7 +41,7 @@ export default function Login() {
 
       <section className="h-full flex justify-center items-center">
 
-        <form onSubmit={handleSubmit(onSubmitLogin)} className="bg-slate-100 p-3 shadow shadow-2xl space-y-5 h-auto">
+        <form onSubmit={handleSubmit(onSubmitLogin)} className="bg-slate-100 p-3 shadow-2xl space-y-5 h-auto">
 
           <fieldset className="p-4">
 
@@ -75,10 +76,8 @@ export default function Login() {
               </span>
 
             </legend>
-
             {
-              isHiddenPassword ? (
-
+              isHiddenPassword && 
                 <>
 
                   <input type="password" className={`border h-full w-full p-2 bg-transparent ${errors.password && 'border-red-500'}`} {...register('password')} />
@@ -90,9 +89,10 @@ export default function Login() {
                   </span>
 
                 </>
+            }
 
-              ) : (
-
+            {
+              !isHiddenPassword && 
                 <>
 
                   <input type="text" className={`border h-full w-full p-2 bg-transparent ${errors.password && 'border-red-500'}`} {...register('password')} />
@@ -105,8 +105,6 @@ export default function Login() {
 
                 </>
 
-              )
-
             }
 
           </fieldset>
@@ -118,6 +116,7 @@ export default function Login() {
             LOGIN
 
           </button>
+            <Link href="/register" prefetch={false} >Register</Link>
 
         </form>
 
