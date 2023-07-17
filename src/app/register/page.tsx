@@ -172,8 +172,12 @@ export default function Register() {
                         REGISTER
 
                     </button>
+                    
+                    <div className="text-center font-bold justify-center mt-0.5 w-full">
 
-                    <Link href="/" prefetch={false} >Login</Link>
+                        <Link href="/"  prefetch={false} >Login</Link>
+
+                    </div>
 
                 </form>
 

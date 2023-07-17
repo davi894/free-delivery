@@ -76,6 +76,7 @@ export default function Login() {
               </span>
 
             </legend>
+
             {
               isHiddenPassword && 
                 <>
@@ -116,7 +117,13 @@ export default function Login() {
             LOGIN
 
           </button>
+
+          <div className="text-center font-bold justify-center mt-0.5 w-full">
+
             <Link href="/register" prefetch={false} >Register</Link>
+
+          </div>
+
 
         </form>
 
